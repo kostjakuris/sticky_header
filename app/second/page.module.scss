@@ -1,0 +1,155 @@
+.block {
+  width: 100%;
+  background: lightgreen;
+  border-radius: 10px;
+
+  &__img_wrapper {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  &__img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-top: 10px;
+    font-size: 3rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  &__price {
+    font-weight: bold;
+    margin: 15px 0;
+    font-size: 2rem;
+  }
+
+  &__button {
+    cursor: pointer;
+    margin-top: auto;
+    padding: 10px;
+    background: lightcoral;
+    border: none;
+    border-radius: 10px;
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__text {
+    font-size: 1rem;
+    //overflow: hidden;
+    //display: -webkit-box;
+    //-webkit-line-clamp: 3;
+    //-webkit-box-orient: vertical;
+  }
+}
+
+.container {
+  //align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  //justify-items: center;
+  //grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  &__item_1 {
+    background: lightcoral;
+    border-radius: 10px;
+    padding: 20px;
+    //grid-column: 1 / 3;
+    //grid-row: 1 / 3;
+  }
+
+  &__item_2 {
+    background: lightcoral;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  &__item_3 {
+    background: lightcoral;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  &__item_4 {
+    background: lightcoral;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  &__item_5 {
+    background: lightcoral;
+    border-radius: 10px;
+    padding: 20px;
+  }
+}
+
+//&__second_background {
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  z-index: -1;
+//  width: 100vw;
+//  margin-left: calc(50% - 50vw);
+//  background: cornflowerblue;
+//  height: 300px;
+//}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+
+  &__logo {
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(50px, 9vw, 160px);
+  }
+
+  &__nav_list {
+    color: white;
+    display: flex;
+    font-size: 1.4rem;
+    gap: 20px;
+    list-style-type: none;
+  }
+
+  &__nav_link {
+    padding: 5px 10px;
+    text-decoration: none;
+
+    &:hover {
+      color: gray;
+    }
+  }
+
+  &__nav_button {
+    padding: 7px 20px;
+    background: lightcoral;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+}
