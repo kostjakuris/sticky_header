@@ -1,16 +1,16 @@
 .header {
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1000;
   padding: 16px 0;
-  background: transparent;
+  height: 55px;
+  background: black;
   transition:
       background-color 0.3s ease,
       box-shadow 0.3s ease,
       transform 0.42s cubic-bezier(.165, .84, .44, 1);
-}
-
-.header.default {
-  position: relative;
 }
 
 .header.fixed {
@@ -25,8 +25,7 @@
 }
 
 .header.appearing {
-  position: relative;
-  animation: slide-in-down 0.42s cubic-bezier(.165, .84, .44, 1);
+  animation: slide-in-down 0.6s cubic-bezier(.165, .84, .44, 1);
 }
 
 .header.leaving {
@@ -66,5 +65,65 @@
   to {
     transform: translateY(-100%);
     opacity: 0;
+  }
+}
+
+.parent {
+  position: relative;
+  width: 500px;
+  height: 200px;
+  background: #111;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.child {
+  position: absolute;
+  inset: 0;
+}
+
+.child::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      #00f7ff,
+      transparent
+  );
+  animation: sweep 1.7s linear 0s 1;
+}
+
+/* Меняем фон родителя */
+.parent::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: gray;
+  transform: translateX(100%);
+  animation: fillParent 1.5s linear 0.25s forwards;
+  z-index: 0;
+}
+
+@keyframes sweep {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes fillParent {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
